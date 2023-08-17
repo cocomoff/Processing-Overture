@@ -39,6 +39,30 @@
 20230725_210643_00079_ayc64_fa803010-a326-4119-8d5a-c4d9173205a7
 ```
 
+- We need two directories: `indices` and `tables` to generate CSV files after filtering places in parquet files.
+
+
+# How to run
+
+- To save indices (i.e., index of places in `shape` file), just run:
+
+```
+./get_all_index.sh
+```
+
+- To generate separated CSV files, just run:
+
+```
+./get_all_table.sh
+```
+
+- Simple parsers/converters written in Python are saved in `src/`.
+- Scatter plots of extracted POIs are saved in `figures/`.
+
+
 # Related articles (in Japanese)
 
 - https://zenn.dev/takilog/articles/b2c588753fb3aa
+- An example of data is here:
+
+![](example.png)
