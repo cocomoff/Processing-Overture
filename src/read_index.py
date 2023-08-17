@@ -31,7 +31,7 @@ def main(
 
     fn_table = os.path.join("tables", f"{fn_base}_{args.suffix}.csv")
     with codecs.open(fn_table, "w", encoding="utf-8") as ff:
-        ff.write("name,cat,lon,lat\n")
+        ff.write('"name";"cat";"lon";"lat"\n')
         for i in tqdm(idx):
             data_i = {}
             for j in table.column_names:
@@ -40,13 +40,11 @@ def main(
             cat_i = data_i["categories"]["main"]
             lon_i = data_i["bbox"]["minx"]
             lat_i = data_i["bbox"]["miny"]
-            ff.write(f"{name_i},{cat_i},{lon_i},{lat_i}\n")
+            ff.write(f'"{name_i}";"{cat_i}";"{lon_i}";"{lat_i}"\n')
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Processing parquet files (filtering locations by shape files)"
-    )
+    parser = argparse.ArgumentParser(description="Read indices and generate CSV files")
     parser.add_argument(
         "-n",
         "--name",
