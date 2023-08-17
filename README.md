@@ -56,8 +56,15 @@
 ./get_all_table.sh
 ```
 
-- Simple parsers/converters written in Python are saved in `src/`.
+- Simple parsers/converters written in Python are saved in `src/`, which are called from script files.
 - Scatter plots of extracted POIs are saved in `figures/`.
+- To merge the all separated CSV files (saved in `tables/`), just run:
+
+```
+python src/merge_table.py
+```
+
+- Finally, we get a concatenated CSV files (`tokyo.csv`).
 
 
 # Related articles (in Japanese)
